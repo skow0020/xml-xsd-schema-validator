@@ -15,6 +15,7 @@ if (xsdFiles.length != 1) { throw 'There must be exactly 1 xsd file in the base 
 fs.writeFileSync(resultsFile, 'FileName, Results, Messages,\n');
 
 fs.readdir(testFolder, (err, files) => {
+  if (!files.length) { throw 'No xml files were found in the xmls directory'; }
   files.forEach(xmlfile => {
     validator.validateXML({ file: `${testFolder}${xmlfile}` }, xsdFiles[0], function (err, result) {
       if (err && !err.message.includes('invalid xml')) {
