@@ -1,0 +1,15 @@
+{
+  "name": "xmlvalidator",
+  "version": "1.0.0",
+  "description": "XML Validation against an XSD file",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "validate": "node validatorScript.js"
+  },
+  "author": "Colin Skow",
+  "license": "ISC",
+  "devDependencies": {
+    "xsd-schema-validator": "^0.6.0"
+  }
+}
